@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>SneakySemicolon - Clean Up After Yourself</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css">
+
+    </head>
+    <body>
+      <header class="group">
+        <div class="navbar-header">
+          <a href="/" class="navbar-text">SneakySemicolon</a>
+        </div>
+        <nav class="navbar-links">
+          <ul class="nav navbar-nav">
+            
+              <li>
+            
+              <a href="/">Home</a>
+            </li>
+
+            
+              <li>
+            
+              <a href="/about">About</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div class="container group">
+        <div class="content">
+          <article>
+	<h3>Clean Up After Yourself</h3>
+	<h5><small>02 Mar 2014</small></h5>
+	<p>When I was growing up my dad always made sure I followed one rule whenever we were working on a project around the house: clean up once you are done. This makes logical sense. When everything has a place and it is in that place, then it is easy for yourself or anyone else to pick up on that project without needing to search for that <del>[redacted]</del> 11/64&quot; socket. How come software developers then seem to have such a hard time with this concept?</p>
+
+<p>At some point or another everyone has started on an existing project and run into the brick wall of &quot;How do I get this running?&quot; Now there are tools to help with solving this problem. Java has Maven/Gradle, Ruby has Bundler and Rake, node.js has npm, .NET has nuget, etc. Here&#39;s the problem though: these tools tend to suck when you are getting onto a project for the first time. Let&#39;s look at an example:</p>
+
+<ol>
+<li>You get some Java project from a GIT repo.</li>
+<li>You try to do a mvn clean install and it breaks (shocking) so you yell at it and keep running maven until the build succeeds. This is standard practice after all.</li>
+<li>You configure a local Tomcat instance oh wait... You need a data source...</li>
+<li>Search for something ending in .sql. Get angry when you notice these require an Oracle database and you only have Postgres. </li>
+<li>Spend 3 years setting up express edition.</li>
+<li>Notice that there are 20 file to setup and seed the database and you have no clue what order to run them in.</li>
+<li>Consult the project guru. Oh there is none and this project hasn&#39;t been touched in years? Better have it running before you leave.</li>
+<li>Get everything to install with no errors? And a log in screen? Success, or atleast we will assume so.</li>
+</ol>
+
+<p>Now this isn&#39;t even a very complex example, just a database and some code that hits it. The question is how do we solve this problem?</p>
+
+<p>First thing is first. Let&#39;s tackle the database installation problem that should not be a problem. There are many approaches to fixing this. Some are simple and sometimes work such as numbering the files to mark what order they should run in. Let&#39;s take it one step further though: <a href="http://en.wikipedia.org/wiki/Schema_migration">migrations</a>. We will use ActiveRecord as an example. This allows yoou to easily add or remove changes to a database programatically, and lets the developer forget about it. Starting on the project? That&#39;s cool. simply run <code>rake db:create</code> and you&#39;re done.</p>
+
+<p>Now onto the subject developers won&#39;t like: documentation. Yes it&#39;s true we don&#39;t like it, in fact we despise it. For the most part I say &quot;Bah who needs it&quot;. Well we do in this case. Please, please, please make an installation document. Give step by step instructions. Assume you are writting for a monkey at a <del>typewritter</del> computer. Name what database you are using, name what dependencies might be hard to install, give the answers to common problems that might creep up. Yes this is boring, and yes you will spend hours stareing at Word or someother text editor but it will make everyone&#39;s lifes so much easier. When you are done writting it remember too: put your tools back. Don&#39;t just write it, throw it on a shared drive, and forget about it. Make sure that information stays with the code base. Possibly a project site such as Sharepoint. Or better yet in my opinion: put it in source control. Make it easy to notice. This document is that 11/64&quot; socket that you can&#39;t find and will make your code base that much more stable. I don&#39;t care how well your code runs because if it isn&#39;t stable to install then it isn&#39;t a stable code base.</p>
+
+</article>
+        </div>
+    </body>
+</html>
