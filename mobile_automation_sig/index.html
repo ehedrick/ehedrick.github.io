@@ -70,6 +70,7 @@
 						<li>Both cross platform (iOS and Android)</li>
 						<li>Both can run against simulators and physical devices</li>
 						<li>Both require OSX for iOS testing</li>
+						<li>Both work with native and hybrid apps</li>
 					</ul>
 				</section>
 				
@@ -93,9 +94,28 @@
 						<li>Injects a server into the app</li>
 						<li>Command line tools</li>
 						<li>Integration with Xamarin Test Cloud</li>
-						<li>Has it's own query lanague</li>
 						<li>Version compatibility is a nightmare</li>
+						<li>Has it's own query lanague</li>
 					</ul>
+				</section>
+				
+				<section>
+					<h2>Calabash Queries</h2>
+					<pre class="fragment"><code data-trim>
+query("UIView")
+					</code></pre>
+					<pre class="fragment"><code data-trim>
+query("UIButtonView index:1")
+					</code></pre>
+					<pre class="fragment"><code data-trim>
+query("UILabel", :text)
+					</code></pre>
+					<pre class="fragment"><code data-trim>
+query("label marked:'Tears in Heaven' parent tableViewCell descendant tableViewCellReorderControl")
+					</code></pre>
+					<pre class="fragment"><code data-trim>
+query("label {text BEGINSWITH 'Cell 1'}")
+					</code></pre>
 				</section>
 				
 				<section>
@@ -109,6 +129,7 @@
 						<li>Frameworks can be inconsistent in execution</li>
 						<li>Only one iOS target per machine at any given time</li>
 						<li>Continuous integration can be difficult</li>
+						<li>Waiting for animations and network traffic can be a challenge</li>
 					</ul>
 				</section>
 				
@@ -126,6 +147,7 @@
 				
 				<section>
 					<h1>Questions?</h1>
+					<img src="images/squirrel.jpg" />
 				</section>
 			</div>
 		</div>
